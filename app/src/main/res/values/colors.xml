@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8bc34a</color>
+    <color name="colorPrimaryDark">#689f38</color>
+    <color name="colorAccent">#0091ea</color>
+    <color name="btninicio">#873066</color>
+    <color name="blanco">#ffffff</color>
+    <color name="transparente">#00ffffff</color>
+    <color name="warning">#dcf5101c</color>
+    <color name="gris">#dcb6b6b5</color>
+    <color name="azul_claro">#dc62a0ab</color>
+    <color name="cafe_gris">#696969</color>
+    <color name="azulito">#0facb0</color>
+    <color name="naranja">#f77401</color>
+</resources>

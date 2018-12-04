@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VerificacionProyecto">
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/proyecto" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Verificar Código Proyecto"
+        android:textSize="18dp"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Por seguridad ingresa el codigo de verificación del proyecto" />
+
+    <EditText
+        android:id="@+id/codigo_verifica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="25dp"
+        android:hint="Codigo Proyecto"
+        android:textSize="30dp" />
+
+
+    <Button
+        android:id="@+id/btn_verificar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/azulito"
+        android:text="VERIFICAR CLAVE"
+        android:textColor="@color/blanco" />
+
+
+    <TextView
+        android:id="@+id/cambiarid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        />
+
+
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/azulito"
+        android:text="Continuar"
+        android:textColor="@color/blanco"
+        android:visibility="invisible"
+        />
+
+</LinearLayout>
