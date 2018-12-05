@@ -153,6 +153,16 @@ public class VerificacionUsuario extends AppCompatActivity implements View.OnCli
     }
 
 
+    /* Funcion: Muestra la siguiente activity*/
+    public void mostrarSiguiente(final String tipo ){
+        Intent intent = new Intent(this,FormularioUsuario.class);
+        Bundle miBundle=new Bundle();
+        miBundle.putString("tipo",tipo);
+        intent.putExtras(miBundle);
+        startActivity(intent);
+    }
+
+
     /* Controlador de evento onClick*/
     @Override
     public void onClick(View v) {
@@ -161,10 +171,10 @@ public class VerificacionUsuario extends AppCompatActivity implements View.OnCli
                 verificarUsuario();
                 break;
             case R.id.btnRegistrar:
-                Toast.makeText(this, "boton registrar", Toast.LENGTH_SHORT).show();
+                mostrarSiguiente("registrar");
                 break;
             case R.id.btnActualizar:
-                Toast.makeText(this, "boton actualizar", Toast.LENGTH_SHORT).show();
+                mostrarSiguiente("actualizar");
                 break;
 
         }

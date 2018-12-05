@@ -22,7 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VerificacionUsuario"></activity>
+        <activity android:name=".VerificacionUsuario" />
+        <activity android:name=".FormularioUsuario"></activity>
     </application>
 
 </manifest>
