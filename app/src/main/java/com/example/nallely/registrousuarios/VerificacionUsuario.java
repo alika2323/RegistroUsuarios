@@ -31,7 +31,7 @@ public class VerificacionUsuario extends AppCompatActivity implements View.OnCli
   Button btnVerificar, btnRegistrar, btnActualizar;
   EditText edt_claveUsuario, edt_curp;
   TextView informacion;
-  String claveUsuario, curp;
+  String claveUsuario, curp, idusuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +62,7 @@ public class VerificacionUsuario extends AppCompatActivity implements View.OnCli
         final JSONArray data;
         values.add(claveUsuario);
         values.add(curp);
+        values.add("");
         data=new JSONArray( values );
 
 
@@ -81,13 +82,6 @@ public class VerificacionUsuario extends AppCompatActivity implements View.OnCli
                                 String datos=res.getString("DATOS");
                                 mostrarDatos(datos);
 
-                                /*
-                                Intent intent=new Intent(TipoUsuario.this, MainActivity.class);
-                                Bundle miBundle=new Bundle();
-                                miBundle.putString("dato_codigo_usuario",dato_codigo_usuario);
-                                intent.putExtras(miBundle);
-                                startActivity(intent);
-                                */
                             }else{
                                 Toast.makeText(VerificacionUsuario.this, "no verificado", Toast.LENGTH_SHORT).show();
                                 btnActualizar.setVisibility(View.INVISIBLE);
@@ -138,15 +132,17 @@ public class VerificacionUsuario extends AppCompatActivity implements View.OnCli
 
 
 
-    /* Funcion: Mostrar datos proyectos */
+    /* Funcion: Mostrar datos usuario */
     public void mostrarDatos(String Datos) throws JSONException {
         JSONObject datos = new JSONObject(Datos);
         String nombreUsuario=datos.getString("NOMBRE");
         String aPaterno=datos.getString("APELLIDOPATERNO");
+         idusuario=datos.getString("IDUSUARIO");
 
         informacion=(TextView)findViewById(R.id.informacion);
         informacion.setText("nombre: " + nombreUsuario +
-                "apellido: " + aPaterno
+                "apellido: " + aPaterno +
+                "idusuario: " + idusuario
         );
         btnActualizar.setVisibility(View.VISIBLE);
         btnActualizar.setOnClickListener(this);
@@ -154,10 +150,12 @@ public class VerificacionUsuario extends AppCompatActivity implements View.OnCli
 
 
     /* Funcion: Muestra la siguiente activity*/
-    public void mostrarSiguiente(final String tipo ){
+    public void mostrarSiguiente(final String tipo, final String idusuario ){
+        Toast.makeText(this, tipo, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this,FormularioUsuario.class);
         Bundle miBundle=new Bundle();
         miBundle.putString("tipo",tipo);
+        miBundle.putString("idusuario",idusuario);
         intent.putExtras(miBundle);
         startActivity(intent);
     }
@@ -171,10 +169,10 @@ public class VerificacionUsuario extends AppCompatActivity implements View.OnCli
                 verificarUsuario();
                 break;
             case R.id.btnRegistrar:
-                mostrarSiguiente("registrar");
+                mostrarSiguiente("registrar","0");
                 break;
             case R.id.btnActualizar:
-                mostrarSiguiente("actualizar");
+                mostrarSiguiente("actualizar",idusuario);
                 break;
 
         }

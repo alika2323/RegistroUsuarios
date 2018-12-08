@@ -22,7 +22,7 @@
 
 
             <TextView
-                android:id="@+id/imei"
+                android:id="@+id/txt_imei"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -30,17 +30,15 @@
                 android:text="IMEI DEL DM"
                 android:textSize="20dp" />
 
-
             <TextView
-                android:id="@+id/tipoForm"
+                android:id="@+id/txt_numTelefonico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="Tipo Formulario"
-                android:textSize="20dp"
+                android:text="IMEI DEL DM"
+                android:textSize="20dp" />
 
-                />
 
             <TextView
                 android:id="@+id/datos_adic"
@@ -219,22 +217,68 @@
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
-            <Spinner
-                android:id="@+id/condicionEntrega"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="30dp"
+                android:paddingTop="5dp">
 
-            </Spinner>
+                <TextView
+                    android:id="@+id/pregCondicionEntrega"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿Recibiste en buenas condiciones y completo tu equipo?" />
+
+                <Spinner
+                    android:id="@+id/condicionEntrega"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/shipper_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:gravity="top"
+                        android:hint="Observaciones"
+                        android:inputType="textMultiLine"
+                        android:overScrollMode="always"
+                        android:padding="15dp"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
 
         </LinearLayout>
         <!--  /PREGUNTAS SECCION I-->
 
 
         <Button
-            android:id="@+id/registrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="REGISTRAR" />
+            android:id="@+id/btnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/azulito"
+            android:text="Registar Usuario"
+            android:textColor="@color/blanco" />
 
 
     </LinearLayout>
